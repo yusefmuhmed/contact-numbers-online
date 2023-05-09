@@ -12,18 +12,6 @@ const userSchema = mongoose.Schema({
         required: true
     },
 
-    // email: {
-    //     type: String,
-    //     trim: true,
-    //     lowercase: true,
-    //     required: true,
-    //     unique: true,
-    //     validate(value) {
-    //         if (!validator.isEmail(value)) {
-    //             throw new Error("invalid email format")
-    //         }
-    //     }
-    // },
     // status: {
     //     type: Boolean,
     //     default: true
@@ -33,15 +21,9 @@ const userSchema = mongoose.Schema({
         type: String,
         trim: true,
         required: true,
-        // match: ''
+
     },
-    // phoneNum: {
-    //     type: String,
-    //     validate(value) {
-    //         if (!validator.isMobilePhone(value, "ar-EG"))
-    //             throw new Error("invalid number")
-    //     }
-    // },
+
 
 
 

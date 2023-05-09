@@ -7,11 +7,11 @@ require("../db/connect")
 app.use(express.json())
 app.use(express.static(path.join(__dirname, "../uploads")))
 const userRoutes = require("../routes/user.routes")
-const postRoutes = require("../routes/post.routes")
+const contactRoutes = require("../routes/contact.routes")
 const projectRoutes = require("../routes/project.routes")
 
 app.use("/api/user/", userRoutes)
-app.use("/api/post/", postRoutes)
+app.use("/api/contact/", contactRoutes)
 app.use("/api/project/", projectRoutes)
 app.all("*", (req, res) => {
     res.status(404).send({
