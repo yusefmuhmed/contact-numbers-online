@@ -42,7 +42,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"user2\",\r\n    \"password\":\"user2\"\r\n}",
+							"raw": "{\r\n    \"username\":\"user1\",\r\n    \"password\":\"user1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -56,6 +56,37 @@
 							],
 							"path": [
 								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "add contact",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"contactName\":\"Contact1\",\r\n\"phoneNum\":\"01030887521\",\r\n\"addresses\":{\r\n    \"addressType\":\"Home\"\r\n}\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}contact/addContact",
+							"host": [
+								"{{baseUrl}}contact"
+							],
+							"path": [
+								"addContact"
 							]
 						}
 					},
