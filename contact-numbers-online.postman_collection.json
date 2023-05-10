@@ -73,7 +73,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n\"contactName\":\"Contact1\",\r\n\"phoneNum\":\"01030887521\",\r\n\"addresses\":{\r\n    \"addressType\":\"Home\"\r\n}\r\n\r\n\r\n}",
+							"raw": "{\r\n\r\n\"contactName\":\"Farag\",\r\n\"phoneNum\":\"01030887522\",\r\n\"addresses\":{\r\n    \"addressType\":\"Home\"\r\n}\r\n\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -87,6 +87,68 @@
 							],
 							"path": [
 								"addContact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch all contacts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}contact/fetchContacts",
+							"host": [
+								"{{baseUrl}}contact"
+							],
+							"path": [
+								"fetchContacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete contact",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}contact/deleteContact/:01030887521",
+							"host": [
+								"{{baseUrl}}contact"
+							],
+							"path": [
+								"deleteContact",
+								":01030887521"
+							],
+							"variable": [
+								{
+									"key": "01030887521",
+									"value": null
+								}
 							]
 						}
 					},
