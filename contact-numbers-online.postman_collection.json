@@ -136,19 +136,57 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}contact/deleteContact/:01030887521",
+							"raw": "{{baseUrl}}contact/deleteContact/01030887521",
 							"host": [
 								"{{baseUrl}}contact"
 							],
 							"path": [
 								"deleteContact",
-								":01030887521"
-							],
-							"variable": [
-								{
-									"key": "01030887521",
-									"value": null
+								"01030887521"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit contact",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"contactName\":\"Faraaaag\",\r\n\"phoneNum\":\"010302233\",\r\n\"addresses\":{\r\n    \"addressType\":\"Work\"\r\n}\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}contact/editContact/645bee8fe5bf4dc077df7070",
+							"host": [
+								"{{baseUrl}}contact"
+							],
+							"path": [
+								"editContact",
+								"645bee8fe5bf4dc077df7070"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch all contacts by limit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}contact/fetchContactsByLimit",
+							"host": [
+								"{{baseUrl}}contact"
+							],
+							"path": [
+								"fetchContactsByLimit"
 							]
 						}
 					},
