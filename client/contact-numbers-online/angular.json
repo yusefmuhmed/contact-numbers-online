@@ -26,12 +26,12 @@
                         ],
                         "styles": [
                             "src/styles.css",
-                            "E:/Nodejs Projects/contact-numbers-online/client/contact-numbers-online/node_modules/@fortawesome/fontawesome-free/css/all.css",
-                            "E:/Nodejs Projects/contact-numbers-online/client/contact-numbers-online/node_modules/bootstrap/dist/css/bootstrap.css"
+                            "D:/Projects/contact-numbers-online/contact-numbers-online/client/contact-numbers-online/node_modules/@fortawesome/fontawesome-free/css/all.css",
+                            "D:/Projects/contact-numbers-online/contact-numbers-online/client/contact-numbers-online/node_modules/bootstrap/dist/css/bootstrap.css"
 
                         ],
                         "scripts": [
-                            "E:/Nodejs Projects/contact-numbers-online/client/contact-numbers-online/node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+                            "D:/Projects/contact-numbers-online/contact-numbers-online/client/contact-numbers-online/node_modules/bootstrap/dist/js/bootstrap.bundle.js"
                         ]
                     },
                     "configurations": {
