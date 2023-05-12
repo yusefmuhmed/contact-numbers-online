@@ -4,18 +4,21 @@ import { ContactManagerComponent } from './Components/contact-manager/contact-ma
 import { AddContactComponent } from './Components/add-contact/add-contact.component';
 import { EditContactComponent } from './Components/edit-contact/edit-contact.component';
 import { ViewContactComponent } from './Components/view-contact/view-contact.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
 
 { path:'', redirectTo: '/contacts/admin', pathMatch: 'full'},
 
-{ path:'/contacts/admin', component:ContactManagerComponent },
+{ path:'contacts/admin', component:ContactManagerComponent },
 
-{ path:'/contacts/add', component:AddContactComponent },
+{ path:'contacts/add', component:AddContactComponent },
 
-{ path:'/contacts/edit', component:EditContactComponent },
+{ path:'contacts/edit/:contactId', component:EditContactComponent },
 
-{ path:'/contacts/view', component:ViewContactComponent },
+{ path:'contacts/view/:contactId', component:ViewContactComponent },
+
+{path:'**',component:PageNotFoundComponent}
 
 ];
 
