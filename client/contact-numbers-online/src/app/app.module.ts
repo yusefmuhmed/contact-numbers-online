@@ -3,14 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactListComponent } from './contact-list/contact-list.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { ContactManagerComponent } from './Components/contact-manager/contact-manager.component';
+import { AddContactComponent } from './Components/add-contact/add-contact.component';
+import { EditContactComponent } from './Components/edit-contact/edit-contact.component';
+import { ViewContactComponent } from './Components/view-contact/view-contact.component';
+import { SpinnerComponent } from './Components/spinner/spinner.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactListComponent,
-    ContactFormComponent
+    NavbarComponent,
+    ContactManagerComponent,
+    AddContactComponent,
+    EditContactComponent,
+    ViewContactComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
