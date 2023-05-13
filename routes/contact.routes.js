@@ -5,8 +5,9 @@ router.post("/addContact", Contact.addContact)
 router.get("/fetchContacts", Contact.fetchContact)
 
 router.get("/fetchContactsByLimit", Contact.fetchContactLimit)
+router.get("/getSingleContact/:_id", Contact.getSingleContact)
 
-router.delete("/deleteContact/:phoneNum", Contact.deleteContact)
-router.put("/editContact/:phoneNum", Contact.editContact)
+router.delete("/deleteContact/:_id", Contact.deleteContact)
+router.put("/editContact/:_id", Contact.editContact)
 
 module.exports = router

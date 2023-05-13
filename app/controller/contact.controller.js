@@ -30,6 +30,18 @@ class Contact {
     }
 
 
+    // get single contact
+    static getSingleContact = async(req, res)=>{
+        try{
+            const contact = await contactModel.findById(req.params._id)
+            myHelper.resHandler(res, 200, true,contact,"Contact viewed")
+        }
+        catch(e){
+            myHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+
+
     //fetch all contacts by limit = 5
     static fetchContactLimit = async(req, res) => {
         try {
@@ -62,8 +74,8 @@ class Contact {
     static deleteContact = async(req, res) => {
         try {
             const phoneNum = req.params.phoneNum
-            const contact = await contactModel.findOneAndRemove({ phoneNum })
-            myHelper.resHandler(res, 200, true, contact, "Contact deleted successfully")
+            const contact = await contactModel.findByIdAndRemove(req.params._id)
+            myHelper.resHandler(res, 200, true, "Contact deleted successfully")
         } catch (e) {
             myHelper.resHandler(res, 500, false, e, e.message)
         }
@@ -74,9 +86,8 @@ class Contact {
     static editContact = async(req, res) => {
 
         try {
-            const { contactName, phoneNum, addresses, notes } = req.body;
-            const contact = await contactModel.findOneAndUpdate(req.params._id, { contactName, phoneNum, addresses, notes }, { new: true })
-            myHelper.resHandler(res, 200, true, contact, "Contact updated successfully")
+            const contact = await contactModel.findByIdAndUpdate(req.params._id,req.body)
+            myHelper.resHandler(res, 200, true, req.body, "Contact updated successfully")
         } catch (e) {
             myHelper.resHandler(res, 500, false, e, e.message)
         }

@@ -2,33 +2,34 @@
   <div class="row">
     <div class="col">
       <p class="h3 fw-bold text-danger">Edit Contact</p>
-      <p class=" fst-italic">ipsum dolor sit amet, consectetur adipisicing elit.
-        inventore labore molestiae odio, odit guaerat quisquam quo repudiandae rerum
-        veritatis. </p>
+
     </div>
   </div>
 </div>
+
+<pre>{{contact.data|json}}</pre>
+
 
 <!-- Edit Contact Form -->
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <form>
+      <form  (submit)="updateSubmit()" >
 
         <div class="mb-2">
-          <input class="form-control" placeholder="Name" type="text">
+          <input class="form-control"  required="true" name="contactName" [(ngModel)]="contact.data.contactName" [value]="contact.data.contactName" placeholder="Name" type="text">
         </div>
 
         <div class="mb-2">
-          <input class="form-control" placeholder="Phone-Num" type="phone">
+          <input class="form-control" required="true" name="phoneNum" [(ngModel)]="contact.data.phoneNum" [(value)]="contact.data.phoneNum"  placeholder="Phone-Num" type="phone">
         </div>
 
         <div class="mb-2">
-          <input class="form-control" placeholder="Address" type="text">
+          <input class="form-control"  name="addresses" [(ngModel)]="contact.data.addresses"  [value]="contact.data.addresses" placeholder="Address" type="text">
         </div>
 
         <div class="mb-2">
-          <input class="form-control" placeholder="Notes" type="text">
+          <input class="form-control"  name="notes" [(ngModel)]="contact.data.notes"  [value]="contact.data.notes" placeholder="Notes" type="text">
         </div>
 
         <div class="mb-2">

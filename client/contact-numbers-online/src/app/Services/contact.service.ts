@@ -9,15 +9,44 @@ import { Observable, catchError, throwError } from 'rxjs';
 export class ContactService {
 
   // try ''
-  private  serverUrl = `http://localhost:3000/api`
+  private  serverUrl = `http://localhost:3000/api/`
 
   constructor(private httpClient: HttpClient) { }
 
+
 //GET  all contacts
-public getAllContacts(): Observable<IContact[]> {
-let dataUrl: string = `${this.serverUrl}/contact`
-  return this.httpClient.get<IContact[]>(dataUrl).pipe(catchError(this.handleError));
+public getAllContacts(): Observable<any> {
+
+  return this.httpClient.get("http://localhost:3000/api/contact/fetchContacts");
 }
+
+public getSingleContact(contactId:string): Observable<any> {
+
+  return this.httpClient.get(`http://localhost:3000/api/contact/getSingleContact/${contactId}`);
+}
+
+
+
+//Create Contact
+public createContact(contact:any): Observable<any> {
+  return this.httpClient.post("http://localhost:3000/api/contact/addContact",contact);
+  }
+
+
+
+//UPDATE single contact
+public updateContact(contact:any,contactId:string): Observable<any> {
+  return this.httpClient.put(`http://localhost:3000/api/contact/updateContact/${contactId}`,contact).pipe(catchError(this.handleError))
+  }
+
+
+//Delete single contact
+public deleteContact(contactId:string): Observable<any> {
+  return this.httpClient.delete(`http://localhost:3000/api/contact/deleteContact/${contactId}`);
+  }
+
+
+
 
 //Error handling
 public handleError(error:HttpErrorResponse){

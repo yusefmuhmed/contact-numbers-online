@@ -28,35 +28,35 @@
 </div>
 
 
-<!-- Cards container -->
 
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-md-5">
-            <div class="card list-group-item-danger shadow-lg ">
-                <div class="card-body">
-                    <div class="row">
+<!-- Cards container -->
+<ng-container>
+
+<div *ngIf="!loading && contacts.length > 0 && contacts.length < 6 "  class="container mt-4"   >
+    <div   class="row">
+        <div  class="col-md-5"  *ngFor="let contact of contacts"  >
+            <div  class="card list-group-item-danger shadow-lg my-2">
+                <div  class="card-body">
+                    <div  class="row  ">
 
                         <div class="col-sm-8">
                             <ul class="list-group">
-                                <li class="list-group-item">Name: <span class="fw-bold">Name</span> </li>
-                                <li class="list-group-item">Mobile: <span class="fw-bold">Mobile</span> </li>
-                                <li class="list-group-item">Address: <span class="fw-bold">Address</span> </li>
-                                <li class="list-group-item">Notes: <span class="fw-bold"> ssitatibus aspernatur, ducimus sit quisquam odio! Magnam deserunt eligendi totam esse laboriosam veritatis?</span> </li>
-                            </ul>
+                                <li class="list-group-item">Name: <span class="fw-bold">{{ contact.contactName }}</span>  </li>
+                                <li class="list-group-item">Mobile: <span class="fw-bold">{{ contact.phoneNum }}</span> </li>
+                                <li class="list-group-item">Address:<span class="fw-bold">{{ contact.addresses }}</span> </li>
+                                <li class="list-group-item">Notes: <span class="fw-bold"> {{ contact.notes }}</span> </li>
+                              </ul>
 
 
                         </div>
                         <div class="col-sm-1 d-flex flex-column justify-content-center align-items-center ">
-                            <a class="btn btn-warning my-1" routerLink="/contacts/view/:contactId">
-                                <i class="fa fa-eye"></i>
-                            </a>
 
-                            <a class="btn btn-primary my-1 " routerLink="/contacts/edit/:contactId">
+
+                            <a class="btn btn-primary my-1 " routerLink="/contacts/edit/{{contact._id}}">
                                 <i class="fa fa-pen"></i>
                             </a>
 
-                            <a class="btn btn-danger my-1 ">
+                            <a class="btn btn-danger my-1 "  (click)="clickDeleteContact(contact._id)" >
                                 <i class="fa fa-trash-alt"></i>
                             </a>
 

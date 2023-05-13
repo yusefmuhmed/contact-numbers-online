@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContactManagerComponent } from './Components/contact-manager/contact-manager.component';
 import { AddContactComponent } from './Components/add-contact/add-contact.component';
 import { EditContactComponent } from './Components/edit-contact/edit-contact.component';
-import { ViewContactComponent } from './Components/view-contact/view-contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -16,7 +15,6 @@ const routes: Routes = [
 
 { path:'contacts/edit/:contactId', component:EditContactComponent },
 
-{ path:'contacts/view/:contactId', component:ViewContactComponent },
 
 {path:'**',component:PageNotFoundComponent}
 

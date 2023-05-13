@@ -17,14 +17,11 @@ const Contact = mongoose.model("Contact", {
         default: ""
     },
 
-    addresses: [{
-        addressType: {
-            type: String,
-            trim: true,
-            required: true
-        },
-        details: {}
-    }],
+    addresses: {
+        type: String,
+        trim: true,
+        default: ""
+    },
 
 
     phoneNum: {

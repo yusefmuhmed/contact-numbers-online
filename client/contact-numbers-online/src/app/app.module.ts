@@ -7,10 +7,10 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { ContactManagerComponent } from './Components/contact-manager/contact-manager.component';
 import { AddContactComponent } from './Components/add-contact/add-contact.component';
 import { EditContactComponent } from './Components/edit-contact/edit-contact.component';
-import { ViewContactComponent } from './Components/view-contact/view-contact.component';
 import { SpinnerComponent } from './Components/spinner/spinner.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,14 +19,14 @@ import {HttpClientModule } from '@angular/common/http';
     ContactManagerComponent,
     AddContactComponent,
     EditContactComponent,
-    ViewContactComponent,
     SpinnerComponent,
     PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
