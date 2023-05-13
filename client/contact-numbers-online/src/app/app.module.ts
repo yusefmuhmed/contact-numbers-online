@@ -11,7 +11,8 @@ import { SpinnerComponent } from './Components/spinner/spinner.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { NgxSearchPipeModule } from 'ngx-search-pipe'; 
+import { NgxSearchPipeModule } from 'ngx-search-pipe';
+import { LoginUserComponent } from './Components/User components/login-user/login-user.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { NgxSearchPipeModule } from 'ngx-search-pipe';
     EditContactComponent,
     SpinnerComponent,
     PageNotFoundComponent,
+    LoginUserComponent,
   ],
   imports: [
     BrowserModule,
