@@ -21,9 +21,14 @@ public getAllContacts(): Observable<any> {
 }
 
 public getSingleContact(contactId:string): Observable<any> {
-
   return this.httpClient.get(`http://localhost:3000/api/contact/getSingleContact/${contactId}`);
 }
+
+
+public filterContactsByName(contactName:string): Observable<any> {
+  return this.httpClient.get(`http://localhost:3000/api/contact/filterContactsByName/${contactName}`);
+}
+
 
 
 
@@ -36,7 +41,7 @@ public createContact(contact:any): Observable<any> {
 
 //UPDATE single contact
 public updateContact(contact:any,contactId:string): Observable<any> {
-  return this.httpClient.put(`http://localhost:3000/api/contact/updateContact/${contactId}`,contact).pipe(catchError(this.handleError))
+  return this.httpClient.put(`http://localhost:3000/api/contact/editContact/${contactId}`,contact).pipe(catchError(this.handleError))
   }
 
 

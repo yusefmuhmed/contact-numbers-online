@@ -4,6 +4,8 @@ const Contact = require('../app/controller/contact.controller')
 router.post("/addContact", Contact.addContact)
 router.get("/fetchContacts", Contact.fetchContact)
 
+router.get("/filterContactsByName/:contactName", Contact.filterContactsByName)
+
 router.get("/fetchContactsByLimit", Contact.fetchContactLimit)
 router.get("/getSingleContact/:_id", Contact.getSingleContact)
 

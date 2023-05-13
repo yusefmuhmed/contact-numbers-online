@@ -11,7 +11,7 @@ import { SpinnerComponent } from './Components/spinner/spinner.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { NgxSearchPipeModule } from 'ngx-search-pipe'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxSearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

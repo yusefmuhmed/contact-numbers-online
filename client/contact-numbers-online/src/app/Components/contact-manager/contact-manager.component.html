@@ -12,11 +12,9 @@
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col">
-                                <input class="form-control" placeholder="Search User" type="text">
+                                <input class="form-control" name="searchName" [(ngModel)]="searchText" placeholder="Search By Name" type="text">
                             </div>
-                            <div class="col">
-                                <input class="btn btn-outline-dark" type="submit" value="Search">
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -32,9 +30,9 @@
 <!-- Cards container -->
 <ng-container>
 
-<div *ngIf="!loading && contacts.length > 0 && contacts.length < 6 "  class="container mt-4"   >
+<div *ngIf="contacts.length > 0 "  class="container mt-4"   >
     <div   class="row">
-        <div  class="col-md-5"  *ngFor="let contact of contacts"  >
+        <div  class="col-md-5"  *ngFor="let contact of contacts | ngxSearchPipe:searchText "    >
             <div  class="card list-group-item-danger shadow-lg my-2">
                 <div  class="card-body">
                     <div  class="row  ">

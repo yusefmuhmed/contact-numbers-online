@@ -12,6 +12,7 @@ export class ContactManagerComponent {
   public loading: boolean = false;
   public contacts: any[] = [];
   public errorMessage: string | null = null;
+  public searchText: any | null = null;
 
   constructor (private contactService: ContactService) {
     this.getContacts()
@@ -26,7 +27,9 @@ export class ContactManagerComponent {
     this.loading = false;})
   }
 
-  public clickDeleteContact(contactId:string| undefined){
+public clickDeleteContact(contactId:string| undefined){
+const confirmed = window.confirm('Are you sure you want to delete this contact?');
+if(confirmed){
 if(contactId){
 this.contactService.deleteContact(contactId).subscribe((data) =>{
 this.getContacts();
@@ -37,7 +40,12 @@ this.getContacts();
 
 )
 }
+}
   }
 
+
+
+
+  public clickSearchContact(contactName:string| undefined){}
 
 }

@@ -73,7 +73,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n\"contactName\":\"Farag\",\r\n\"phoneNum\":\"01030887522\",\r\n\"addresses\":{\r\n    \"addressType\":\"Home\"\r\n}\r\n\r\n\r\n}",
+							"raw": "{\r\n\r\n\"contactName\":\"mohamed\",\r\n\"phoneNum\":\"01230887524\",\r\n\"addresses\":\"Home\"\r\n\r\n\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -136,13 +136,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}contact/deleteContact/01030887521",
+							"raw": "{{baseUrl}}contact/deleteContact/645f934c238bad2a0b76bd10",
 							"host": [
 								"{{baseUrl}}contact"
 							],
 							"path": [
 								"deleteContact",
-								"01030887521"
+								"645f934c238bad2a0b76bd10"
 							]
 						}
 					},
@@ -155,7 +155,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n\"contactName\":\"Faraaaag\",\r\n\"phoneNum\":\"010302233\",\r\n\"addresses\":{\r\n    \"addressType\":\"Work\"\r\n}\r\n\r\n\r\n}",
+							"raw": "{\r\n\r\n\"contactName\":\"Fag\",\r\n\"phoneNum\":\"01033\",\r\n\"addresses\":\"Work\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -163,13 +163,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}contact/editContact/645bee8fe5bf4dc077df7070",
+							"raw": "{{baseUrl}}contact/editContact/645fb2fa67a93fd53d82b70a",
 							"host": [
 								"{{baseUrl}}contact"
 							],
 							"path": [
 								"editContact",
-								"645bee8fe5bf4dc077df7070"
+								"645fb2fa67a93fd53d82b70a"
 							]
 						}
 					},
@@ -187,6 +187,42 @@
 							],
 							"path": [
 								"fetchContactsByLimit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single contact",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}contact/getSingleContact/645f934c238bad2a0b76bd10",
+							"host": [
+								"{{baseUrl}}contact"
+							],
+							"path": [
+								"getSingleContact",
+								"645f934c238bad2a0b76bd10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter contacts by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}contact/filterContactsByName/mohamed",
+							"host": [
+								"{{baseUrl}}contact"
+							],
+							"path": [
+								"filterContactsByName",
+								"mohamed"
 							]
 						}
 					},

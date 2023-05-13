@@ -60,10 +60,11 @@ class Contact {
     }
 
     //filter contacts
-    static filterContact = async(req, res) => {
+    static filterContactsByName = async(req, res) => {
         try {
-            const contacts = await contactModel.find()
-            myHelper.resHandler(res, 200, true, contacts, "Contacts fetched successfully")
+            const contactName = req.params.contactName
+            const contacts = await contactModel.find({contactName})
+            myHelper.resHandler(res, 200, true, contacts, "Same Contacts by name fetched successfully")
         } catch (e) {
             myHelper.resHandler(res, 500, false, e, e.message)
         }
@@ -73,7 +74,7 @@ class Contact {
     // delete contact
     static deleteContact = async(req, res) => {
         try {
-            const phoneNum = req.params.phoneNum
+            
             const contact = await contactModel.findByIdAndRemove(req.params._id)
             myHelper.resHandler(res, 200, true, "Contact deleted successfully")
         } catch (e) {

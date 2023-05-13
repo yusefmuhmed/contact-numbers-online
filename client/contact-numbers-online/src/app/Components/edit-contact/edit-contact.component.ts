@@ -20,8 +20,8 @@ export class EditContactComponent {
 
   }
 
-  ngOnInit(): void {
-    this.loading = true;
+ngOnInit(): void {
+this.loading = true;
 this.activatedRoute.paramMap.subscribe((param: any) => {
 
 this.contactId = param.get('contactId');
@@ -32,7 +32,8 @@ this.contactId = param.get('contactId');
 if (this.contactId){
   this.contactService.getSingleContact(this.contactId).subscribe((data: any) => {
 
-    this.contact = data
+    this.contact = data.data
+    console.log(this.contact)
     this.loading = false;
   }, (error)=>{
     this.errorMessage = error
@@ -45,28 +46,26 @@ if (this.contactId){
   }
 
 
-updateSubmit(){
-
-  if(this.contactId){
-
-  this.contactService.updateContact(this.contact,this.contactId).subscribe(data => {
+  public updateContact(){
+    if(this.contactId){
+    this.contactService.updateContact(this.contact,this.contactId).subscribe(contact => {
 
     this.router.navigate(['/']).then();
 
     },
     (error)=>{this.errorMessage=error;
-    this.router.navigate([`/contacts/edit/${this.contactId}`])
+    this.router.navigate(['/contacts/edit'])
     }
     )
+    }
+
+
+
+
+
+
+
   }
-}
-
-
-
-
-
-
-
 
 
 }
