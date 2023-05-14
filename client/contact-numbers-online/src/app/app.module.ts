@@ -12,7 +12,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxSearchPipeModule } from 'ngx-search-pipe';
-import { LoginUserComponent } from './Components/User components/login-user/login-user.component'; 
+import { LoginUserComponent } from './Components/User components/login-user/login-user.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { LoginUserComponent } from './Components/User components/login-user/logi
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxSearchPipeModule
+    NgxSearchPipeModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

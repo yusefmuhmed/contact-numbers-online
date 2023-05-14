@@ -44,15 +44,22 @@ class Contact {
 
     //fetch all contacts by limit = 5
     static fetchContactLimit = async(req, res) => {
-        try {
-            const page = req.query.page ? parseInt(req.query.page) : 1;
-            const limit = 5;
-            const skip = (page - 1) * limit;
 
-            const contacts = await contactModel.find()
-                .skip(skip)
-                .limit(limit)
-            myHelper.resHandler(res, 200, true, contacts, "Contacts fetched successfully")
+        try {
+            const { page, size } = req.query;
+
+        if(!page){
+            page = 1
+        }
+
+        if(!size){
+            size = 5
+        }
+
+        const limit = parseInt(size)
+        const skip = (page-1)*size
+        const contacts = await contactModel.find().limit(limit).skip(skip)
+        myHelper.resHandler(res, 200, true, contacts, "Contacts fetched successfully in limit")
         } catch (e) {
             myHelper.resHandler(res, 500, false, e, e.message)
         }

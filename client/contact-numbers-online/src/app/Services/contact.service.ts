@@ -20,6 +20,12 @@ public getAllContacts(): Observable<any> {
   return this.httpClient.get("http://localhost:3000/api/contact/fetchContacts");
 }
 
+//GET  all contacts by limit
+public getAllContactsByLimit(): Observable<any> {
+
+  return this.httpClient.get("http://localhost:3000/api/contact/fetchContactsByLimit");
+}
+
 public getSingleContact(contactId:string): Observable<any> {
   return this.httpClient.get(`http://localhost:3000/api/contact/getSingleContact/${contactId}`);
 }
