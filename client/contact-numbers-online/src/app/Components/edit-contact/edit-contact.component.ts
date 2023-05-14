@@ -50,7 +50,7 @@ if (this.contactId){
     if(this.contactId){
     this.contactService.updateContact(this.contact,this.contactId).subscribe(contact => {
 
-    this.router.navigate(['/']).then();
+    this.router.navigate(['/contacts/admin']).then();
 
     },
     (error)=>{this.errorMessage=error;
