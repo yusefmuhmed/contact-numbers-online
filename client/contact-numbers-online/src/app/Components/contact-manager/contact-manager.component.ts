@@ -16,8 +16,8 @@ export class ContactManagerComponent implements OnInit {
 
   page: number = 1;
   count: number = 0;
-  tableSize: number = 5;
-  tableSizes: any = [5, 10];
+  pageSize: number = 5;
+  sizes: any = [5, 10];
 
   constructor (private contactService: ContactService) {
 
@@ -59,7 +59,7 @@ this.getContacts();
     this.getContacts();
   }
   onContactSizeChange(event: any): void {
-    this.tableSize = event.target.value;
+    this.pageSize = event.target.value;
     this.page = 1;
     this.getContacts();
   }
